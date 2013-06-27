@@ -20,6 +20,13 @@ git clone https://github.com/xiaocong/backbone.boilerplate.git .
 # Install bower and node packages
 bower install
 npm install
+
+# Notes:
+# 1. Some node packages require to install other tools and libraries,
+# you must meet the requirements firstly.
+#
+# 2. I met an error during using compass(https://github.com/gruntjs/grunt-contrib-compass).
+# After I upgraded ruby to 2.0 and sass to 3.2, the issue was resolved.
 ```
 
 # Development
