@@ -258,6 +258,20 @@ module.exports = (grunt) ->
           src: ["**/*.js"]
         ]
 
+    jst:
+      compile:
+        options:
+          templateSettings:
+            interpolate: /\{\{(.+?)\}\}/g
+
+          processName: (filename)->
+            filename.slice(yeomanConfig.app.length + 1)
+
+          amd: true
+
+        files:
+          ".tmp/scripts/jst.js": ["<%= yeoman.app %>/templates/**/*.html"]
+
     concurrent:
       server: ["compass", "coffee:dist"]
       test: ["coffee"]
@@ -275,5 +289,5 @@ module.exports = (grunt) ->
     grunt.task.run ["clean:server", "concurrent:server", "connect:livereload", "open", "watch"]
 
   grunt.registerTask "test", ["clean:server", "concurrent:test", "connect:test", "mocha"]
-  grunt.registerTask "build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:build", "requirejs", "cssmin", "concat", "uglify", "copy:dist", "rev", "usemin"]
+  grunt.registerTask "build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:build", "jst:compile", "requirejs", "cssmin", "concat", "uglify", "copy:dist", "rev", "usemin"]
   grunt.registerTask "default", ["jshint", "test", "build"]

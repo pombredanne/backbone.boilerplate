@@ -1,5 +1,5 @@
 #global define
-define ["layoutmanager"], ->
+define ["jst", "layoutmanager"], (JST)->
   "use strict"
 
   # Provide a global location to place configuration settings and module
@@ -9,7 +9,8 @@ define ["layoutmanager"], ->
   app = root: "/"
 
   # Localize or create a new JavaScript Template object.
-  JST = window.JST = window.JST or {}
+  #JST = window.JST = window.JST or JST
+  # @xiaocong AMD load JST modle
 
   # Configure LayoutManager with Backbone Boilerplate defaults.
   Backbone.Layout.configure

@@ -1,5 +1,4 @@
-
-# Application.
+# Router.
 define ["app"], (app) ->
 
   # Defining the application router, you can attach sub routers here.
@@ -11,4 +10,3 @@ define ["app"], (app) ->
         app.useLayout('layouts/main').render()
   )
   Router
-
