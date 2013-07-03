@@ -255,8 +255,8 @@ module.exports = (grunt) ->
     jst:
       compile:
         options:
-          templateSettings:
-            interpolate: /\{\{(.+?)\}\}/g
+          #templateSettings:
+            #interpolate: /\{\{(.+?)\}\}/g
 
           processName: (filename)->
             filename.slice(yeomanConfig.app.length + 1)

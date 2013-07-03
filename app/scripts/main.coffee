@@ -5,6 +5,8 @@ require.config
     backbone: "../bower_components/backbone/backbone"
     underscore: "../bower_components/underscore/underscore"
     layoutmanager: "../bower_components/layoutmanager/backbone.layoutmanager"
+    "jquery.cookie": "../bower_components/jquery.cookie/jquery.cookie"
+    "jquery.md5": "../bower_components/jquery-md5/jquery.md5"
 
   shim:
     bootstrap:
@@ -21,6 +23,12 @@ require.config
     layoutmanager:
       deps: ["backbone"]
 
+    "jquery.cookie":
+      deps: ["jquery"]
+
+    "jquery.md5":
+      deps: ["jquery"]
+
 require ["app", "router", "jquery"], (app, Router, $) ->
   "use strict"
 
@@ -32,7 +40,7 @@ require ["app", "router", "jquery"], (app, Router, $) ->
   # Trigger the initial route and enable HTML5 History API support, set the
   # root folder to '/' by default.  Change in app.js.
   Backbone.history.start
-    pushState: true
+    pushState: false
     root: app.root
 
 

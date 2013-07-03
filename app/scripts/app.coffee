@@ -6,7 +6,9 @@ define ["jst", "layoutmanager"], (JST)->
   # creation.
 
   # The root path to run the application.
-  app = root: "/"
+  app =
+    root: "/"
+    api_url: "http://localhost:9001/smartapi"
 
   # Localize or create a new JavaScript Template object.
   #JST = window.JST = window.JST or JST
@@ -42,6 +44,7 @@ define ["jst", "layoutmanager"], (JST)->
     module: (additionalProps) ->
       _.extend
         Views: {}
+        Models: {}
       , additionalProps
 
 
