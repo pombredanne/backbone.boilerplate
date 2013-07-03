@@ -29,7 +29,8 @@ define ["app", "modules/common", "modules/login", "modules/user", "modules/group
       common.logout()
 
     group: (gid)->
-      collection = new group.Models.SessionCollection([], gid: gid)
+      GroupCollection = group.Models.SessionCollection.extend gid: gid
+      collection = new GroupCollection()
       collection.fetch()
       layout = app.useLayout 'layouts/main'
       layout.setViews

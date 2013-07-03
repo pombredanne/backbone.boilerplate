@@ -22,8 +22,6 @@ define ["backbone", "underscore", "jquery", "app", "modules/common", "bootstrap"
       @get("endtime") is "N/A"
 
   Group.Models.SessionCollection = Backbone.Collection.extend
-    initialize: (models, options)-> # Must pass gid in param 'options'
-      @gid = options.gid
 
     model: Group.Models.SessionModel
 
@@ -75,7 +73,6 @@ define ["backbone", "underscore", "jquery", "app", "modules/common", "bootstrap"
         if model.running()
           running.push new Group.Views.SessionItemView(model: model)
         all.push new Group.Views.SessionItemView(model: model)
-
 
       @insertViews
         "#panel-running tbody": running
