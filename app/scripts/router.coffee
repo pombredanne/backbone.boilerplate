@@ -29,15 +29,16 @@ define ["app", "modules/common", "modules/login", "modules/user", "modules/group
       common.logout()
 
     group: (gid)->
-      GroupCollection = group.Models.SessionCollection.extend gid: gid
-      collection = new GroupCollection()
+      CycleCollection = group.Models.CycleCollection.extend gid: gid
+      collection = new CycleCollection()
       collection.fetch()
       layout = app.useLayout 'layouts/main'
       layout.setViews
         "#navbar": new common.Views.NavbarView()
         "#content": new group.Views.LayoutView
           views:
-            "#details": new group.Views.SessionView(collection: collection)
+            "#sidebar": new group.Views.CycleView(collection: collection)
+            "#details": new group.Views.SessionView(collection: new group.Models.SessionCollection([]))
 
       layout.render()
 

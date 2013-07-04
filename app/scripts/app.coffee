@@ -8,7 +8,7 @@ define ["jst", "layoutmanager"], (JST)->
   # The root path to run the application.
   app =
     root: "/"
-    api_url: "http://localhost:9001/smartapi"
+    api_url: "http://ats.borqs.com/smartapi"
 
   # Localize or create a new JavaScript Template object.
   #JST = window.JST = window.JST or JST

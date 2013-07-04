@@ -1,11 +1,7 @@
-<td><a class="btn-link" data-toggle="tooltip" title="<%= 'Product:\t' + deviceinfo.product + '\nDevice ID:\t' + deviceid + '\nTester:\t' + tester %>"><%= id %></a></td>
-<td><%= deviceinfo.revision %></td>
-<td><%= planname %></td>
+<td><a class="btn-link" ><%= id %></a></td>
+<td><%= deviceid %></td>
+<td><%= tester %></td>
 <td><%= starttime %></td>
 <td><%= (runtime/3600.).toFixed(1) + " hrs" %></td>
-<td><%= summary.total %></td>
-<td><%= summary.pass %></td>
-<td><%= summary.fail %></td>
-<td><%= summary.error %></td>
 <td style="width: 36px;"><a id="session_delete" class="btn-link" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
 </td>
