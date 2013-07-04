@@ -49,9 +49,15 @@ define ["backbone", "underscore", "jquery", "app", "modules/common", "bootstrap"
   Group.Views.SessionItemView = Backbone.View.extend
     tagName: "tr"
     template: "group/sessionitem"
+    events:
+      "click": "select"
 
     initialize: ->
       @listenTo @model, "change", @render
+
+    select: ->
+      app.router.navigate "group/#{@model.get('gid')}/session/#{@model.get('sid')}", trigger: true
+      false
 
     serialize: ->
       @model.toJSON()
