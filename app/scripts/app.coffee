@@ -18,7 +18,7 @@ define ["jst", "layoutmanager"], (JST)->
     # Allow LayoutManager to augment Backbone.View.prototype.
     manage: true
     prefix: "templates/"
-    fetch: (path) ->
+    fetchTemplate: (path) ->
 
       # Concatenate the file extension.
       path = path + ".html"
